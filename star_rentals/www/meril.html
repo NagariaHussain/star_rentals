@@ -1,16 +1,29 @@
-<h1>Hello Meril</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Meril</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+    <h1>Hello Meril</h1>
+    
+    {% set vehicles = frappe.get_all("Vehicle", 
+        fields=["make", "model"], 
+        filters={
+            "status": "Active"
+    }) %}
+    
+    
+    {% for v in vehicles %}
+    <li>{{ v.make }} {{ v.model }}</li>
+    {% endfor %}
+    
+    <div>
+        {{ current_user.full_name }}
+    </div>
 
-{% set vehicles = frappe.get_all("Vehicle", 
-    fields=["make", "model"], 
-    filters={
-        "status": "Active"
-}) %}
-
-
-{% for v in vehicles %}
-<li>{{ v.make }} {{ v.model }}</li>
-{% endfor %}
-
-<div>
-    {{ current_user.full_name }}
-</div>
+    <button class="ui secondary button">Contact Us</button>
+</body>
+</html>
