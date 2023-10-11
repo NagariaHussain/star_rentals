@@ -6,6 +6,11 @@ app_email = "hussain@frappe.io"
 app_license = "mit"
 # required_apps = []
 
+
+fixtures = [
+    "Vehicle Type"
+]
+
 # Includes in <head>
 # ------------------
 
@@ -123,15 +128,24 @@ app_license = "mit"
 # Hook on document methods and events
 
 # doc_events = {
-#	"*": {
+#	"Vehicle Tyoe": {
 #		"on_update": "method",
 #		"on_cancel": "method",
 #		"on_trash": "method"
 #	}
 # }
+# doc_events = {
+#     "*": {
+#         "before_insert": "star_rentals.api.send_otp"
+#     }
+# }
 
 # Scheduled Tasks
 # ---------------
+
+# scheduler_events = {
+#     "monthly": ["star_rentals.api.process_for_driver_payout"]
+# }
 
 # scheduler_events = {
 #	"all": [
@@ -158,9 +172,9 @@ app_license = "mit"
 
 # Overriding Methods
 # ------------------------------
-#
+# #
 # override_whitelisted_methods = {
-#	"frappe.desk.doctype.event.event.get_events": "star_rentals.event.get_events"
+# 	"frappe.desk.doctype.event.event.get_events": "star_rentals.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;

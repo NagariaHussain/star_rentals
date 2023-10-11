@@ -1,0 +1,29 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "condition": "doc.status==\"Pending\"",
+ "creation": "2023-10-10 15:58:20.474347",
+ "date_changed": "creation",
+ "days_in_advance": 1,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Ride Booking",
+ "enabled": 1,
+ "event": "New",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Please pick up at: {{ doc.pickup_address }}",
+ "modified": "2023-10-10 15:58:35.900858",
+ "modified_by": "Administrator",
+ "module": "Star Rentals",
+ "name": "New Booking",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "Maintenance User"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "New Booking from {{ doc.customer_name }}"
+}

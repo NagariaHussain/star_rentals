@@ -1,0 +1,20 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h1> Vehicle Details </h1>
+
+<h3>{{ doc.make }} {{ doc.model }}, {{ doc.year }}</h3>
+
+{% if doc.vehicle_image %}
+
+<img alt="Vehicle Image" src="{{ doc.vehicle_image }}" />
+
+{% else %}
+
+<span>No Image Provided</span>
+
+{% endif %}
+
+<a href="/book-vehicle/new?vehicle={{ doc.name }}" class="btn btn-primary mt-2 btn-lg">Book Now</a>
+
+{% endblock %}

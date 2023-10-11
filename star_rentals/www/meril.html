@@ -1,0 +1,16 @@
+<h1>Hello Meril</h1>
+
+{% set vehicles = frappe.get_all("Vehicle", 
+    fields=["make", "model"], 
+    filters={
+        "status": "Active"
+}) %}
+
+
+{% for v in vehicles %}
+<li>{{ v.make }} {{ v.model }}</li>
+{% endfor %}
+
+<div>
+    {{ current_user.full_name }}
+</div>
