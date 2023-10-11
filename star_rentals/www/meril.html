@@ -11,9 +11,7 @@
     
     {% set vehicles = frappe.get_all("Vehicle", 
         fields=["make", "model"], 
-        filters={
-            "status": "Active"
-    }) %}
+    ) %}
     
     
     {% for v in vehicles %}
